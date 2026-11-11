@@ -18,7 +18,7 @@ jobs:
 
       - name: Extract source ZIP
         run: |
-          python3 -c "import zipfile; zipfile.ZipFile('Alternate_Assist_Android_Build_Source.zip').extractall('.')"
+          python3 -c "import zipfile; zipfile.ZipFile('Alternate_Assist_Android_Build_Source_Fixed.zip').extractall('.')"
           test -f CMakeLists.txt
 
       - name: Check defaults
@@ -55,7 +55,7 @@ jobs:
         shell: python
         run: |
           import zipfile
-          with zipfile.ZipFile("Alternate_Assist_Android_Build_Source.zip") as z:
+          with zipfile.ZipFile("Alternate_Assist_Android_Build_Source_Fixed.zip") as z:
               z.extractall(".")
           import os
           assert os.path.isfile("CMakeLists.txt"), "CMakeLists.txt is missing!"
